@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "210523121862",
+    "firebase_url": "https://whatsupp-1ca67.firebaseio.com",
+    "project_id": "whatsupp-1ca67",
+    "storage_bucket": "whatsupp-1ca67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210523121862:android:6f7b8c76825c7ad4",
+        "android_client_info": {
+          "package_name": "com.example.whatsupp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210523121862-5quf67edc382qr80h4s311uauusv40h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.whatsupp",
+            "certificate_hash": "f685e548eaa9cff25d490a86da5b84add284c31f"
+          }
+        },
+        {
+          "client_id": "210523121862-f4heahbgjf2vasng2ot7ramn28npdrng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBCr6MSgOvfilUNJYx-vYMDFq_9MZ41_Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210523121862-f4heahbgjf2vasng2ot7ramn28npdrng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
