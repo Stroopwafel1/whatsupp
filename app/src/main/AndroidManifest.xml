@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +25,9 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".GroupChatActivity" />
         <activity android:name=".PhoneLoginActivity" />
         <activity
