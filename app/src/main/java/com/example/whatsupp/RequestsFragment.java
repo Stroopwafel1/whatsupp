@@ -83,9 +83,9 @@ public class RequestsFragment extends Fragment {
                     @Override
                     protected void onBindViewHolder(@NonNull final RequestsViewHolder holder, int position, @NonNull Contacts model) {
 
-                        holder.itemView.findViewById(R.id.request_accept_button).setVisibility(View.VISIBLE);
+                        holder.itemView.findViewById(R.id.new_user_request_button).setVisibility(View.VISIBLE);
 
-                        holder.itemView.findViewById(R.id.request_cancel_button).setVisibility(View.INVISIBLE);
+
 
                         final String list_user_id = getRef(position).getKey();
 
@@ -276,7 +276,7 @@ public class RequestsFragment extends Fragment {
 
         TextView userName, userStatus;
         CircleImageView profileImage;
-        Button AcceptButton, CancelButton;
+        Button AcceptButton, CancelButton, NewRequestButton;
 
 
         public RequestsViewHolder(@NonNull View itemView) {
@@ -285,8 +285,9 @@ public class RequestsFragment extends Fragment {
             userName = itemView.findViewById(R.id.user_profile_name);
             userStatus = itemView.findViewById(R.id.user_status);
             profileImage = itemView.findViewById(R.id.users_profile_image);
-            AcceptButton = itemView.findViewById(R.id.request_accept_button);
-            CancelButton = itemView.findViewById(R.id.request_cancel_button);
+           // AcceptButton = itemView.findViewById(R.id.request_accept_button);
+           // CancelButton = itemView.findViewById(R.id.request_cancel_button);
+            NewRequestButton = itemView.findViewById(R.id.new_user_request_button);
         }
 
     }
