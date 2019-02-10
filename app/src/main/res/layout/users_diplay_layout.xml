@@ -4,12 +4,11 @@
     android:layout_height="wrap_content">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:layout_below="@id/find_friends_toolbar"
+        android:layout_margin="15dp"
         android:orientation="horizontal">
 
 
@@ -35,6 +34,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="user name"
+                    android:textColor="#FFF"
                     android:textAlignment="textStart"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -54,9 +54,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:textColor="#FFF"
                 android:text="user status"
                 android:textAlignment="textStart"
                 android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/request_accept_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/accept_button"
+                    android:text="Accept"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/request_cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/decline_button"
+                    android:text="Decline"
+                    android:textAllCaps="false"
+                    android:textColor="#FFF"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
