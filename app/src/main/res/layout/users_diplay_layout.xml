@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="70dp"
-    >
+    android:layout_height="wrap_content">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
+        android:layout_below="@id/find_friends_toolbar"
         android:orientation="horizontal">
 
 
@@ -50,9 +51,9 @@
 
             <TextView
                 android:id="@+id/user_status"
-                android:layout_marginStart="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="user status"
                 android:textAlignment="textStart"
                 android:textSize="16sp" />
