@@ -69,6 +69,7 @@ public class GroupsFragment extends Fragment {
         });
 
 
+
         return groupfragmentView;
     }
 

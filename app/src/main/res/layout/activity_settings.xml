@@ -7,14 +7,21 @@
     android:background="@color/colorPrimary"
     tools:context=".SettingsActivity">
 
+
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/settings_toolbar">
+
+
+    </include>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/set_profile_image"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-
+        android:layout_marginTop="90dp"
         android:src="@drawable/profile_image"
         app:civ_border_color="#609fe6"
         app:civ_border_width="5dp" />
@@ -61,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/set_profile_status"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/buttons"
         android:inputType="textMultiLine"

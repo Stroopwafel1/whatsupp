@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,8 @@ public class SettingsActivity extends AppCompatActivity {
     private DatabaseReference RootRef;
     private StorageReference UserProfileImagesRef;
     private ProgressDialog loadingBar;
+
+    private Toolbar SettingsToolbar;
 
     private static final int GalleryPic = 1;
 
@@ -90,6 +93,12 @@ public class SettingsActivity extends AppCompatActivity {
         userStatus = findViewById(R.id.set_profile_status);
         userProfileImage = findViewById(R.id.set_profile_image);
         loadingBar = new ProgressDialog(this);
+
+        SettingsToolbar = findViewById(R.id.settings_toolbar);
+        setSupportActionBar(SettingsToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Account Settings");
 
     }
 
@@ -161,11 +170,11 @@ public class SettingsActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter a status", Toast.LENGTH_SHORT).show();
         }
         else {
-            HashMap<String, String> profileMap = new HashMap<>();
+            HashMap<String, Object> profileMap = new HashMap<>();
             profileMap.put("uid", currentUserId);
             profileMap.put("name", setUserName);
             profileMap.put("status", setStatus);
-            RootRef.child("Users").child(currentUserId).setValue(profileMap)
+            RootRef.child("Users").child(currentUserId).updateChildren(profileMap)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
