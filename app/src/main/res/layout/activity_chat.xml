@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupChatActivity">
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ChatActivity">
 
     <include
         android:id="@+id/private_chat_bar_layout"
@@ -12,12 +13,14 @@
 
     </include>
 
-    <ScrollView
-        android:id="@+id/my_private_scroll_view"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/private_message_list_of"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/my_private_LinearLayout"
+
         android:layout_below="@+id/private_chat_bar_layout">
+
+    </android.support.v7.widget.RecyclerView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,7 +41,7 @@
 
         </LinearLayout>
 
-    </ScrollView>
+
 
     <LinearLayout
         android:id="@+id/my_private_LinearLayout"

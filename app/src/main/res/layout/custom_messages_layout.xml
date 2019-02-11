@@ -7,6 +7,7 @@
         android:id="@+id/message_profile_image"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/profile_image" />
 
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="4dp"
         android:layout_toEndOf="@id/message_profile_image"
         android:background="@drawable/receiver_messages_layout"
         android:padding="10dp"
