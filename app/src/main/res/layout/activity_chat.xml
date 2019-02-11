@@ -62,7 +62,6 @@
             android:id="@+id/private_send_messsage_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginStart="3dp"
             android:background="@drawable/send_background_button"
             android:src="@drawable/ic_send" />
