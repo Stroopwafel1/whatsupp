@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout myTabLayout;
     private TabsAccessorAdapter myTabsAccessorAdapter;
 
-    private FirebaseUser currentUser;
+
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+
         RootRef = FirebaseDatabase.getInstance().getReference();
 
         mToolbar = findViewById(R.id.main_page_toolbar);
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onStart();
 
+        FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null){
 
             SendUserToLoginActivity();
@@ -87,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onStop();
 
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
         if (currentUser != null){
 
             updateUserStatus("offline");
@@ -98,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         super.onDestroy();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser != null){
 
@@ -145,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
 
         if (item.getItemId() == R.id.main_logout_option){
+
+            updateUserStatus("offline");
 
             mAuth.signOut();
             SendUserToLoginActivity();
