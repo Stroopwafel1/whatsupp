@@ -17,15 +17,17 @@
         android:id="@+id/private_message_list_of"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_above="@+id/my_private_LinearLayout"
         android:layout_below="@+id/private_chat_bar_layout">
 
     </android.support.v7.widget.RecyclerView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/private_chat_bar_layout"
+        android:id="@+id/private_chat_view"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
             <TextView
                 android:id="@+id/private_chat_text_display"
@@ -39,7 +41,7 @@
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20sp" />
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 
