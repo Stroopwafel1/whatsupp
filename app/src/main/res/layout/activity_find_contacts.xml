@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".FindContactsActivity">
+
+    <include
+
+        android:id="@+id/find_contacts_appbar"
+        layout="@layout/app_bar_layout"></include>
+
+    <RelativeLayout
+        android:id="@+id/my_find_contacts_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/find_contacts_appbar"
+        android:layout_marginTop="15dp">
+
+
+
+        <EditText
+            android:id="@+id/search_box_Contact_input"
+            android:layout_width="280dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/search_background_white"
+            android:hint="Search..."
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <ImageButton
+            android:id="@+id/search_contacts_button2ndActivity"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/simpleTextID_find_contacts"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/search_box_Contact_input"
+            android:background="@drawable/search_background_white"
+            android:src="@drawable/ic_search" />
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_result_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_find_contacts_layout"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

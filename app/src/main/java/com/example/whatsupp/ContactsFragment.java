@@ -1,14 +1,17 @@
 package com.example.whatsupp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +38,8 @@ public class ContactsFragment extends Fragment {
     private DatabaseReference Contactsref, UsersRef;
     private FirebaseAuth mAuth;
     private String currentUserID;
+    private Toolbar mToolbar;
+    private Button searchButton;
 
 
     public ContactsFragment() {
@@ -48,6 +53,7 @@ public class ContactsFragment extends Fragment {
         // Inflate the layout for this fragment
          ContactsView = inflater.inflate(R.layout.fragment_contacts, container, false);
 
+         searchButton = ContactsView.findViewById(R.id.search_contacts_button);
 
          myContactList = ContactsView.findViewById(R.id.contacts_list);
          myContactList.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -58,8 +64,21 @@ public class ContactsFragment extends Fragment {
          Contactsref = FirebaseDatabase.getInstance().getReference().child("Contacts").child(currentUserID);
 
          UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
+
+         searchButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 GoToFindAllContacts();
+             }
+         });
         return ContactsView;
     }
+
+
+
+
+
+
 
     @Override
     public void onStart() {
@@ -173,5 +192,11 @@ public class ContactsFragment extends Fragment {
             profileImage = itemView.findViewById(R.id.users_profile_image);
             onlineIcon = itemView.findViewById(R.id.user_online_status_green);
         }
+    }
+
+    private void GoToFindAllContacts() {
+
+        Intent goToSearch = new Intent(getActivity(), FindContactsActivity.class);
+        startActivity(goToSearch);
     }
 }

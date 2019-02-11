@@ -91,7 +91,6 @@ public class ChatActivity extends AppCompatActivity {
 
         ChatToolBar = findViewById(R.id.private_chat_bar_layout);
         setSupportActionBar(ChatToolBar);
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
