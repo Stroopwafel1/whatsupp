@@ -1,6 +1,7 @@
 package com.example.whatsupp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -35,6 +36,7 @@ public class ChatsFragment extends Fragment {
     private DatabaseReference ChatsRef, UsersRef;
     private FirebaseAuth mAuth;
     private String currentUserID;
+
 
 
 
@@ -78,22 +80,38 @@ public class ChatsFragment extends Fragment {
                     protected void onBindViewHolder(@NonNull final ChatsViewHolder holder, int position, @NonNull Contacts model) {
 
                         final String usersIds = getRef(position).getKey();
+                        final String[] retrieveImage = {"default_image"};
 
                         UsersRef.child(usersIds).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                                if (dataSnapshot.hasChild("image")){
+                                if (dataSnapshot.exists()) {
 
-                                    final String retrieveImage = dataSnapshot.child("image").getValue().toString();
-                                    Picasso.get().load(retrieveImage).into(holder.profileImage);
+                                    if (dataSnapshot.hasChild("image")) {
+
+                                        retrieveImage[0] = dataSnapshot.child("image").getValue().toString();
+                                        Picasso.get().load(retrieveImage[0]).into(holder.profileImage);
+                                    }
+
+                                    final String retrieveName = dataSnapshot.child("name").getValue().toString();
+                                    final String retrieveUserStatus = dataSnapshot.child("status").getValue().toString();
+
+                                    holder.userName.setText(retrieveName);
+                                    holder.userStatus.setText("Last Seen: " + "\n" + "Date " + "Time");
+
+                                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                            Intent chatIntent = new Intent(getContext(), ChatActivity.class);
+                                            chatIntent.putExtra("visit_user_id", usersIds);
+                                            chatIntent.putExtra("visit_user_name", retrieveName);
+                                            chatIntent.putExtra("visit_image", retrieveImage[0]);
+                                            startActivity(chatIntent);
+                                        }
+                                    });
                                 }
-
-                                final String retrieveName = dataSnapshot.child("name").getValue().toString();
-                                final String retrieveUserStatus = dataSnapshot.child("status").getValue().toString();
-
-                                holder.userName.setText(retrieveName);
-                                holder.userStatus.setText("Last Seen: " + "\n" + "Date " + "Time");
 
 
 
