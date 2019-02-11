@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="90dp"
         android:src="@drawable/profile_image"
-        app:civ_border_color="#609fe6"
+        app:civ_border_color="@color/buttonsText"
         app:civ_border_width="5dp" />
 
     <EditText
@@ -40,8 +40,8 @@
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:textAlignment="center"
-        android:textColor="@color/lightblue"
-        android:textColorHint="@color/lightblue"
+        android:textColor="#FFF"
+        android:textColorHint="#FFF"
         android:textStyle="bold" />
 
     <EditText
@@ -58,8 +58,8 @@
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:textAlignment="center"
-        android:textColor="@color/lightblue"
-        android:textColorHint="@color/lightblue"
+        android:textColor="#FFF"
+        android:textColorHint="#FFF"
         android:textStyle="bold" />
 
     <Button
@@ -70,12 +70,13 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="15dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/accept_decline_button"
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:text="Update"
         android:textAlignment="center"
-        android:textColor="@color/lightblue"
+        android:textSize="18sp"
+        android:textColor="#FFF"
         android:textStyle="bold" />
 
 </RelativeLayout>
