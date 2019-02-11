@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
 
     @Override
