@@ -5,7 +5,7 @@
 
     <solid
         android:color="@color/buttons"/>
-    <gradient android:angle="0" android:startColor="#FFEA00" android:endColor="#FF3D00"/>
+    <gradient android:angle="0" android:startColor="#FF3D00" android:endColor="#FFEA00"/>
 
     <corners android:radius="150dp"/>
 
