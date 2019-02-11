@@ -69,15 +69,16 @@
 
                 <Button
                     android:id="@+id/new_user_request_button"
-                    android:layout_width="65dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:background="@drawable/accept_decline_button"
-                    android:text="New!"
+                    android:text="new!"
                     android:textAllCaps="false"
                     android:textColor="#FFF"
                     android:textStyle="bold"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:visibility="invisible"
+
 
                      />
 
